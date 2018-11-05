@@ -12,6 +12,7 @@ public class WeatherGUI extends javax.swing.JFrame {
     /** Creates new form WheaterGUI */
     public WeatherGUI() {
         initComponents();
+        tabWheater.setDefaultRenderer(Object.class, new CellRenderer());
         tabWheater.setModel(bl);
         bl.initCols();
     }

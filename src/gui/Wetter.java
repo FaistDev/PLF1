@@ -21,7 +21,6 @@ public class Wetter {
         setHumidity(humidity);
         this.place = place;
         this.sealevel = sealevel;
-
     }
 
     public void setTemp(float temp) throws Exception {
@@ -35,6 +34,24 @@ public class Wetter {
         if (humidity < 0 || humidity > 100) {
             throw new Exception("Falscher Luftfeuchtigkeit-Wert");
         }
+        this.humidity=humidity;
     }
 
+    public String getPlace() {
+        return place;
+    }
+
+    public int getSealevel() {
+        return sealevel;
+    }
+
+    public float getTemp() {
+        return temp;
+    }
+
+    public int getHumidity() {
+        return humidity;
+    }
+
+    
 }
