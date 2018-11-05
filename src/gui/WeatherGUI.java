@@ -11,6 +11,7 @@ public class WeatherGUI extends javax.swing.JFrame {
     public WeatherGUI() {
         initComponents();
         tabWheater.setModel(bl);
+        bl.initCols();
     }
 
     /** This method is called from within the constructor to

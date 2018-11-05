@@ -41,6 +41,12 @@ public class WetterModel extends AbstractTableModel {
        return wetterstationen.get(rowIndex);
     }
     
-    public void 
+    public void initCols(){
+        cols.add("Place");
+        cols.add("Sea Level");
+        cols.add("Temperatur");
+        cols.add("rel. Humidity");
+        fireTableStructureChanged();
+    }
     
 }
