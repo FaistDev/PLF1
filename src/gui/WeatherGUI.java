@@ -1,5 +1,7 @@
 package gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lb
@@ -59,6 +61,11 @@ public class WeatherGUI extends javax.swing.JFrame {
         jMenu1.add(miAdd);
 
         miRemove.setText("Remove Weather Station");
+        miRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRemoveActionPerformed(evt);
+            }
+        });
         jMenu1.add(miRemove);
 
         jMenuBar1.add(jMenu1);
@@ -66,9 +73,19 @@ public class WeatherGUI extends javax.swing.JFrame {
         jMenu2.setText("Values");
 
         miSetTemp.setText("Set Temperature");
+        miSetTemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSetTempActionPerformed(evt);
+            }
+        });
         jMenu2.add(miSetTemp);
 
         miSetHum.setText("Set Humidity");
+        miSetHum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSetHumActionPerformed(evt);
+            }
+        });
         jMenu2.add(miSetHum);
 
         jMenuBar1.add(jMenu2);
@@ -96,6 +113,33 @@ public class WeatherGUI extends javax.swing.JFrame {
             bl.add(dlg.getW());
         }
     }//GEN-LAST:event_miAddActionPerformed
+
+    private void miRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRemoveActionPerformed
+        // TODO add your handling code here:
+        int[] indizes = tabWheater.getSelectedColumns();
+        for (int i : indizes) {
+            bl.remove(i);
+        }
+    }//GEN-LAST:event_miRemoveActionPerformed
+
+    private void miSetTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSetTempActionPerformed
+        // TODO add your handling code here:
+        try{
+            bl.setTemp(tabWheater.getSelectedRow(), JOptionPane.showInputDialog("Temperatur: "));
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+        
+    }//GEN-LAST:event_miSetTempActionPerformed
+
+    private void miSetHumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSetHumActionPerformed
+        // TODO add your handling code here:
+        try{
+            bl.setHumi(tabWheater.getSelectedRow(), JOptionPane.showInputDialog("Luftfeuchtigkeit: "));
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_miSetHumActionPerformed
 
     /**
      * @param args the command line arguments

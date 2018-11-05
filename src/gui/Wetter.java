@@ -17,10 +17,10 @@ public class Wetter {
     private int humidity;
 
     public Wetter(String place, int sealevel, float temp, int humidity) throws Exception {
-        this.place = place;
-        this.sealevel = sealevel;
         setTemp(temp);
         setHumidity(humidity);
+        this.place = place;
+        this.sealevel = sealevel;
 
     }
 

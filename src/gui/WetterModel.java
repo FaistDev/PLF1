@@ -49,4 +49,17 @@ public class WetterModel extends AbstractTableModel {
         fireTableStructureChanged();
     }
     
+    public void remove(int i){
+        wetterstationen.remove(i);
+        fireTableDataChanged();
+    }
+    
+    public void setTemp(int index, String wert) throws Exception {
+        wetterstationen.get(index).setTemp(Float.parseFloat(wert));
+    }
+    
+    public void setHumi(int index, String wert) throws Exception {
+        wetterstationen.get(index).setHumidity(Integer.parseInt(wert));
+    }
+    
 }

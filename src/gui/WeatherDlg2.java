@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  * @author lb
  */
 public class WeatherDlg2 extends javax.swing.JDialog {
-    
+
     private Wetter w = null;
     private boolean finished = false;
-    
+
     public Wetter getW() {
         return w;
     }
-    
+
     public boolean isFinished() {
         return finished;
     }
@@ -111,11 +111,12 @@ public class WeatherDlg2 extends javax.swing.JDialog {
         // TODO add your handling code here:
         try {
             w = new Wetter(tfPlace.getText(), Integer.parseInt(tfSeaLevel.getText()), Float.parseFloat(tfTemperature.getText()), Integer.parseInt(tfHumidity.getText()));
+            finished = true;
+            this.dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        finished = true;
-        this.dispose();
+
     }//GEN-LAST:event_btOkActionPerformed
 
     private void btCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelActionPerformed
