@@ -4,10 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="3xhif"/>
         <group>
-            <file>file:/D:/Privat/Schule/POS/Ubungen/3xhif_PLF1/src/gui/WeatherDlg2.java</file>
-            <file>file:/D:/Privat/Schule/POS/Ubungen/3xhif_PLF1/src/gui/WeatherGUI.java</file>
-            <file>file:/D:/Privat/Schule/POS/Ubungen/3xhif_PLF1/src/gui/WetterModel.java</file>
-            <file>file:/D:/Privat/Schule/POS/Ubungen/3xhif_PLF1/src/gui/Wetter.java</file>
+            <file>file:/D:/Privat/Schule/POS/Git/PLF1_VB/src/gui/WeatherDlg2.java</file>
+            <file>file:/D:/Privat/Schule/POS/Git/PLF1_VB/src/gui/CellRenderer.java</file>
+            <file>file:/D:/Privat/Schule/POS/Git/PLF1_VB/src/gui/WeatherGUI.java</file>
+            <file>file:/D:/Privat/Schule/POS/Git/PLF1_VB/src/gui/Wetter.java</file>
+            <file>file:/D:/Privat/Schule/POS/Git/PLF1_VB/src/gui/WetterModel.java</file>
         </group>
     </open-files>
 </project-private>

@@ -32,6 +32,7 @@ public class WeatherGUI extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         miAdd = new javax.swing.JMenuItem();
         miRemove = new javax.swing.JMenuItem();
+        miHideSeaLevel = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         miSetTemp = new javax.swing.JMenuItem();
         miSetHum = new javax.swing.JMenuItem();
@@ -68,6 +69,14 @@ public class WeatherGUI extends javax.swing.JFrame {
             }
         });
         jMenu1.add(miRemove);
+
+        miHideSeaLevel.setText("Hide Sea Level");
+        miHideSeaLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miHideSeaLevelActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miHideSeaLevel);
 
         jMenuBar1.add(jMenu1);
 
@@ -142,6 +151,15 @@ public class WeatherGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_miSetHumActionPerformed
 
+    private void miHideSeaLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miHideSeaLevelActionPerformed
+        // TODO add your handling code here:
+        if(tabWheater.getColumnCount()==4){
+            bl.hideCol(true);
+        }else{
+            bl.hideCol(false);
+        }
+    }//GEN-LAST:event_miHideSeaLevelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -184,6 +202,7 @@ public class WeatherGUI extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem miAdd;
+    private javax.swing.JMenuItem miHideSeaLevel;
     private javax.swing.JMenuItem miRemove;
     private javax.swing.JMenuItem miSetHum;
     private javax.swing.JMenuItem miSetTemp;

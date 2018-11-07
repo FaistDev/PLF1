@@ -13,9 +13,10 @@ import javax.swing.table.AbstractTableModel;
  * @author Ben
  */
 public class WetterModel extends AbstractTableModel {
+
     private ArrayList<Wetter> wetterstationen = new ArrayList<>();
     private ArrayList<String> cols = new ArrayList<>();
-    
+
     @Override
     public int getRowCount() {
         return wetterstationen.size();
@@ -30,36 +31,51 @@ public class WetterModel extends AbstractTableModel {
     public String getColumnName(int column) {
         return cols.get(column); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public void add(Wetter w){
+
+    public void add(Wetter w) {
         wetterstationen.add(w);
         fireTableDataChanged();
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-       return wetterstationen.get(rowIndex);
+        return wetterstationen.get(rowIndex);
     }
-    
-    public void initCols(){
+
+    public void initCols() {
+        cols.clear();
         cols.add("Place");
         cols.add("Sea Level");
         cols.add("Temperatur");
         cols.add("rel. Humidity");
         fireTableStructureChanged();
     }
-    
-    public void remove(int i){
+
+    public void remove(int i) {
         wetterstationen.remove(i);
         fireTableDataChanged();
     }
-    
+
     public void setTemp(int index, String wert) throws Exception {
         wetterstationen.get(index).setTemp(Float.parseFloat(wert));
+        fireTableDataChanged();
     }
-    
+
     public void setHumi(int index, String wert) throws Exception {
         wetterstationen.get(index).setHumidity(Integer.parseInt(wert));
+        fireTableDataChanged();
     }
-    
+
+    public void hideCol(boolean hide) {
+        if (hide) {
+            cols.clear();
+            cols.add("Place");
+            cols.add("Temperatur");
+            cols.add("rel. Humidity");
+        }else{
+            initCols();
+        }
+        fireTableStructureChanged();
+    }
+
 }
